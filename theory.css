@@ -1,0 +1,134 @@
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+    color: #e2e8f0;
+    min-height: 100vh;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+  }
+  
+  header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    background: linear-gradient(45deg, #fff, #e2e8f0);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  section h2 {
+    color: #60a5fa;
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.3s ease;
+  }
+  
+  section:hover h2::after {
+    width: 65vw;
+  }
+  
+  section h3 {
+    color: #93c5fd;
+    font-size: 1.5em;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+  
+  ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  ul li:hover::before {
+    transform: translateX(5px);
+  }
+  
+  ul li strong {
+    color: #93c5fd;
+    font-weight: 600;
+  }
+  
+  code {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: "Fira Code", monospace;
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  code:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  pre code {
+    display: block;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 12px;
+    line-height: 1.5;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  pre code:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+  }
+  
