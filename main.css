@@ -1,0 +1,44 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    font-family: Arial;
+    color: #333;
+    background-image: url(bg.webp);
+  }
+  header {
+    background-color:#293241;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 70vh;
+  }
+  
+  
+  
+  
+  footer {
+    background-color: #293241;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+
+  
+ 
+  .content-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr
+    );
+  }
