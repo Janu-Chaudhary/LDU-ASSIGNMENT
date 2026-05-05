@@ -59,6 +59,7 @@ LDU-ASSIGNMENT/
 ├── Group.html          # Team members page
 ├── group.css           # Team page styles
 ├── main.css            # Home page styles
+└── bg.webp             # Background image
 ```
 
 ## Group Members
