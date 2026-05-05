@@ -61,13 +61,6 @@ LDU-ASSIGNMENT/
 ├── main.css            # Home page styles
 ```
 
----
-
-
-```
-
----
-
 ## Group Members
 
 - Anushree Mishra
