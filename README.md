@@ -1,4 +1,5 @@
 # LDU Matrix Factorization
+Live demo - https://graceful-tartufo-c9a93f.netlify.app/
 
 A web-based interactive tool for **LDU Matrix Decomposition**, built as a college group assignment.
 
