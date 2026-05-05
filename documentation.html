@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDU Documentation</title>
+  <link rel="stylesheet" href="theory.css" />
+  <style>
+    .back-btn {
+      display: inline-block;
+      margin: 1.5rem auto 0;
+      padding: 0.6rem 1.4rem;
+      background: rgba(59,130,246,0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover { background: rgba(59,130,246,0.3); }
+    .nav-bar {
+      text-align: center;
+      padding: 1rem 0 0;
+      background: rgba(0,0,0,0.2);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th {
+      background: rgba(59,130,246,0.2);
+      color: #93c5fd;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid rgba(59,130,246,0.3);
+    }
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      color: #e2e8f0;
+    }
+    tr:hover td { background: rgba(59,130,246,0.05); }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-blue  { background: rgba(59,130,246,0.2); color: #60a5fa; }
+    .badge-green { background: rgba(16,185,129,0.2); color: #34d399; }
+    .badge-yellow{ background: rgba(245,158,11,0.2); color: #fbbf24; }
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(59,130,246,0.25); color: #60a5fa;
+      font-weight: 700; font-size: 0.9rem; margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step { display: flex; align-items: flex-start; margin-bottom: 1rem; }
+    .step p { margin: 0; line-height: 1.6; }
+    .file-card {
+      background: rgba(15,23,42,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .file-name { color: #60a5fa; font-family: 'Fira Code', monospace; font-weight: 600; }
+    .file-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="main.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <header>
+    <h1>Documentation</h1>
+  </header>
+
+  <!-- Project Overview -->
+  <section>
+    <h2>Project Overview</h2>
+    <p>
+      This project is a web-based implementation of <strong>LDU Matrix Decomposition</strong>,
+      built as part of a college assignment. It provides an interactive calculator, theoretical
+      explanation, and team information — all accessible from a single landing page.
+    </p>
+    <p style="margin-top:1rem;">
+      <strong>Subject:</strong> Numerical Methods / Linear Algebra &nbsp;|&nbsp;
+      <strong>Technology:</strong> HTML, CSS, JavaScript &nbsp;|&nbsp;
+      <strong>Matrix size:</strong> Up to 8×8
+    </p>
+  </section>
+
+  <!-- File Structure -->
+  <section>
+    <h2>File Structure</h2>
+    <div class="file-card">
+      <div class="file-name">main.html</div>
+      <div class="file-desc">Landing page — links to all sections of the project.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">Ldu.html + javascript.js + Ldu.css</div>
+      <div class="file-desc">Interactive LDU calculator — takes user matrix input and computes L, D, U matrices.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">theory.html + theory.css</div>
+      <div class="file-desc">Theoretical background: what LDU decomposition is, its properties, and worked example.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">Group.html + group.css</div>
+      <div class="file-desc">Team page — photos and names of all group members.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">documentation.html</div>
+      <div class="file-desc">This page — project documentation, algorithm explanation, and usage guide.</div>
+    </div>
+  </section>
+
+  <!-- Algorithm -->
+  <section>
+    <h2>Algorithm Used</h2>
+    <p>The calculator uses <strong>Gaussian Elimination without pivoting</strong> to compute LDU decomposition of an n×n matrix A, such that:</p>
+    <p style="margin:1rem 0;"><code>A = L × D × U</code></p>
+
+    <h3>Steps</h3>
+    <div class="step">
+      <span class="step-num">1</span>
+      <p>Start with matrix A. Initialize <code>L = I</code> (identity), <code>D = 0</code>, <code>U = I</code>.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <p>For each pivot position <code>k</code>, check that the pivot <code>a[k][k] ≠ 0</code>. Set <code>D[k][k] = a[k][k]</code>.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <p>Compute multipliers: <code>L[i][k] = a[i][k] / a[k][k]</code> for rows below the pivot, and eliminate entries below the pivot.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">4</span>
+      <p>Set <code>U[k][j] = a[k][j] / D[k][k]</code> for columns to the right of the pivot.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">5</span>
+      <p>Repeat until all pivots are processed. Verify by computing <code>L × D × U</code> and comparing with original A.</p>
+    </div>
+
+    <h3>Complexity</h3>
+    <table>
+      <tr><th>Operation</th><th>Complexity</th></tr>
+      <tr><td>LDU Decomposition</td><td><code>O(n³)</code></td></tr>
+      <tr><td>Verification (L×D×U)</td><td><code>O(n³)</code></td></tr>
+      <tr><td>Space (L, D, U matrices)</td><td><code>O(n²)</code></td></tr>
+    </table>
+  </section>
+
+  <!-- How to Use -->
+  <section>
+    <h2>How to Use the Calculator</h2>
+    <div class="step">
+      <span class="step-num">1</span>
+      <p>Open <strong>LDU Factorization Calculator</strong> from the home page.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <p>Enter the matrix dimension (between 1 and 8) in the input box.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <p>Click <strong>"Generate Own Matrix"</strong> — a grid of input boxes will appear.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">4</span>
+      <p>Fill in all matrix values (decimals are supported).</p>
+    </div>
+    <div class="step">
+      <span class="step-num">5</span>
+      <p>Click <strong>"Decompose"</strong> — L, D, and U matrices are displayed along with verification.</p>
+    </div>
+
+    <h3>Limitations</h3>
+    <p>The current implementation does not support pivoting, so matrices with a zero pivot (zero on the diagonal during elimination) will return an error message. Use a permuted version of such matrices.</p>
+  </section>
+
+  <!-- Matrix Roles -->
+  <section>
+    <h2>Output Matrices Explained</h2>
+    <table>
+      <tr>
+        <th>Matrix</th><th>Color</th><th>Description</th>
+      </tr>
+      <tr>
+        <td><code>L</code> — Lower Triangular</td>
+        <td><span class="badge badge-blue">Blue</span></td>
+        <td>Unit lower triangular matrix (diagonal = 1, zeros above diagonal)</td>
+      </tr>
+      <tr>
+        <td><code>D</code> — Diagonal</td>
+        <td><span class="badge badge-green">Green</span></td>
+        <td>Diagonal matrix containing the pivot values from Gaussian elimination</td>
+      </tr>
+      <tr>
+        <td><code>U</code> — Upper Triangular</td>
+        <td><span class="badge badge-yellow">Yellow</span></td>
+        <td>Unit upper triangular matrix (diagonal = 1, zeros below diagonal)</td>
+      </tr>
+    </table>
+  </section>
+
+  <div style="text-align:center; padding: 2rem 0 1rem;">
+    <a href="main.html" class="back-btn">← Back to Home</a>
+  </div>
+
+</body>
+</html>
