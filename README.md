@@ -59,21 +59,11 @@ LDU-ASSIGNMENT/
 ├── Group.html          # Team members page
 ├── group.css           # Team page styles
 ├── main.css            # Home page styles
-└── bg.webp             # Background image
 ```
 
 ---
 
-## How to Run
 
-1. Clone or download this repository
-2. Open `main.html` in any modern browser
-3. No dependencies or build steps required
-
-```bash
-git clone https://github.com/YOUR_USERNAME/LDU-ASSIGNMENT.git
-cd LDU-ASSIGNMENT
-# Open main.html in browser
 ```
 
 ---
